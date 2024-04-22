@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations: {}
+  labels:
+    app: deploy-binary-cat-dog
+  name: deploy-binary-cat-dog
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy-binary-cat-dog
+  template:
+    metadata:
+      labels:
+        app: deploy-binary-cat-dog
+    spec:
+      containers:
+      - image: ddocker122/binary-cat-dog:latest
+        imagePullPolicy: Always
+        name: deploy-binary-cat-dog
+        ports:
+        - containerPort: 5000
+        # resources:
+        #   limits:
+        #     cpu: 600.0m
+      terminationGracePeriodSeconds: 2

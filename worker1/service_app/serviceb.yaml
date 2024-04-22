@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations: {}
+  labels:
+    app: deploy-b
+  name: deploy-b381
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy-b
+  template:
+    metadata:
+      labels:
+        app: deploy-b
+    spec:
+      containers:
+      - image: vudinhdai2505/test-app
+        name: deploy-b
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: 600.0m
+      terminationGracePeriodSeconds: 2
+
