@@ -1,0 +1,21 @@
+# natting to connect internet from worker 1 and worker 3 through worker manager
+# https://kifarunix.com/configure-ubuntu-20-04-as-linux-router/
+
+root@worker-desktop:/home/worker/mlmonitor# iptables -A FORWARD -i eno1 -o wlp2s0 -j ACCEPT
+root@worker-desktop:/home/worker/mlmonitor# iptables -A FORWARD -i  wlp2s0 -o eno1 -m state --state RELATED,ESTABLISHED -j ACCEPT
+root@worker-desktop:/home/worker/mlmonitor# iptables -t nat -A POSTROUTING -o wlp2s0 -j MASQUERADE
+
+# network setup in worker1 and 3, remember to change the IP
+network:
+  ethernets:
+    eno0:
+            addresses: [192.168.1.3/24]
+    enp4s0f1:
+            addresses: [192.168.20.10/24]
+            gateway4: 192.168.20.1
+            nameservers:
+                    addresses: [8.8.8.8, 8.8.4.4]
+    ens513f1:
+      dhcp4: true
+    ens786:
+      dhcp4: true
