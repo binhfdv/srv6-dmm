@@ -1,0 +1,217 @@
+{
+  "devices": {
+    "device:r1": {
+      "basic": {
+        "managementAddress": "grpc://mininet:50001?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.p4.srv6_usid"
+      },
+      "srv6DeviceConfig": {
+        "myStationMac": "00:aa:00:00:00:01",
+        "uN": "fcbb:bb00:01::",
+        "uDX": "fcbb:bb00:01:fd00::",
+        "uDX4": "fcbb:bb00:01:fd44::",
+        "uGTP4D": "fcbb:bb00:01:4ddd::",
+        "uGTP4E": "fcbb:bb00:01:4eee::",
+        "isCore": true
+      }
+    },
+    "device:r2": {
+      "basic": {
+        "managementAddress": "grpc://mininet:50002?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.p4.srv6_usid"
+      },
+      "srv6DeviceConfig": {
+        "myStationMac": "00:aa:00:00:00:02",
+        "uN": "fcbb:bb00:02::",
+        "uDX": "fcbb:bb00:02:fd00::",
+        "uDX4": "fcbb:bb00:02:fd44::",
+        "isCore": true
+      }
+    },
+    "device:r3": {
+      "basic": {
+        "managementAddress": "grpc://mininet:50003?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.p4.srv6_usid"
+      },
+      "srv6DeviceConfig": {
+        "myStationMac": "00:aa:00:00:00:03",
+        "uN": "fcbb:bb00:03::",
+        "isCore": true
+      }
+    },
+    "device:r4": {
+      "basic": {
+        "managementAddress": "grpc://mininet:50004?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.p4.srv6_usid"
+      },
+      "srv6DeviceConfig": {
+        "myStationMac": "00:aa:00:00:00:04",
+        "uN": "fcbb:bb00:04::",
+        "isCore": true
+      }
+    },
+    "device:r5": {
+      "basic": {
+        "managementAddress": "grpc://mininet:50005?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.p4.srv6_usid"
+      },
+      "srv6DeviceConfig": {
+        "myStationMac": "00:aa:00:00:00:05",
+        "uN": "fcbb:bb00:05::",
+        "isCore": true
+      }
+    },
+    "device:r6": {
+      "basic": {
+        "managementAddress": "grpc://mininet:50006?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.p4.srv6_usid"
+      },
+      "srv6DeviceConfig": {
+        "myStationMac": "00:aa:00:00:00:06",
+        "uN": "fcbb:bb00:06::",
+        "isCore": true
+      }
+    },
+    "device:r7": {
+      "basic": {
+        "managementAddress": "grpc://mininet:50007?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.p4.srv6_usid"
+      },
+      "srv6DeviceConfig": {
+        "myStationMac": "00:aa:00:00:00:07",
+        "uN": "fcbb:bb00:07::",
+        "isCore": true
+      }
+    },
+    "device:r8": {
+      "basic": {
+        "managementAddress": "grpc://mininet:50008?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.p4.srv6_usid"
+      },
+      "srv6DeviceConfig": {
+        "myStationMac": "00:aa:00:00:00:08",
+        "uN": "fcbb:bb00:08::",
+        "uDX": "fcbb:bb00:08:fd00::",
+        "uDX4": "fcbb:bb00:08:fd44::",
+        "uMUPE": "fcbb:bb00:08:eeee::",
+        "isCore": true
+      }
+    },
+    "device:r9": {
+      "basic": {
+        "managementAddress": "grpc://mininet:50009?device_id=1",
+        "driver": "stratum-bmv2",
+        "pipeconf": "org.p4.srv6_usid"
+      },
+      "srv6DeviceConfig": {
+        "myStationMac": "00:aa:00:00:00:09",
+        "uN": "fcbb:bb00:09::",
+        "uDX4": "fcbb:bb00:09:fd44::",
+        "uMUPE": "fcbb:bb00:09:eeee::",
+        "isCore": true
+      }
+    }
+  },
+  "ports": {
+    "device:r1/4": {
+      "interfaces": [
+        {
+          "name": "r1/4",
+          "ips": [
+            "2001:1:1::ff/64"
+          ]
+        }
+      ]
+    },
+    "device:r1/5": {
+      "interfaces": [
+        {
+          "name": "r1/5",
+          "ips": [
+            "10.100.200.20/24"
+          ]
+        }
+      ]
+    },
+    "device:r1/6": {
+      "interfaces": [
+        {
+          "name": "r1/6",
+          "ips": [
+            "10.100.200.21/24"
+          ]
+        }
+      ]
+    },
+    "device:r8/5": {
+      "interfaces": [
+        {
+          "name": "r8/5",
+          "ips": [
+            "192.168.0.20/24"
+          ]
+        }
+      ]
+    },
+    "device:r8/3": {
+      "interfaces": [
+        {
+          "name": "r8/3",
+          "ips": [
+            "2001:1:2::ff/64"
+          ]
+        }
+      ]
+    },
+    "device:r9/4": {
+      "interfaces": [
+        {
+          "name": "r9/4",
+          "ips": [
+            "192.168.1.20/24"
+          ]
+        }
+      ]
+    }
+  },
+  "hosts": {
+    "00:00:00:00:00:10/None": {
+      "basic": {
+        "name": "h1"
+      }
+    },
+    "00:00:00:00:01:1A/None": {
+      "basic": {
+        "name": "h1a"
+      }
+    },
+    "00:00:00:00:01:1B/None": {
+      "basic": {
+        "name": "h1b"
+      }
+    },
+    "00:00:00:00:02:1A/None": {
+      "basic": {
+        "name": "h2a"
+      }
+    },
+    "00:00:00:00:03:1A/None": {
+      "basic": {
+        "name": "h3a"
+      }
+    },
+    "00:00:00:00:00:20/None": {
+      "basic": {
+        "name": "h2"
+      }
+    }
+  }
+}
