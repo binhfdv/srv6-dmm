@@ -1,16 +1,17 @@
 # natting to connect internet from worker 1 and worker 3 through worker manager
 # https://kifarunix.com/configure-ubuntu-20-04-as-linux-router/
 
+root@worker-desktop:/home/worker# iptables -A FORWARD -i eno1 -o wlp2s0 -j ACCEPT
+root@worker-desktop:/home/worker# iptables -A FORWARD -i  wlp2s0 -o eno1 -m state --state RELATED,ESTABLISHED -j ACCEPT
+root@worker-desktop:/home/worker# iptables -t nat -A POSTROUTING -o wlp2s0 -j MASQUERADE
+
+# prometheus & grafana
 sudo kill -9 $(sudo lsof -t -i:9090)
 sudo kill -9 $(sudo lsof -t -i:3000)
 
 ./prometheus --config.file=prometheus.yml # in prometheus folder
 ./bin/grafana-server # in grafana folder
 
-
-root@worker-desktop:/home/worker# iptables -A FORWARD -i eno1 -o wlp2s0 -j ACCEPT
-root@worker-desktop:/home/worker# iptables -A FORWARD -i  wlp2s0 -o eno1 -m state --state RELATED,ESTABLISHED -j ACCEPT
-root@worker-desktop:/home/worker# iptables -t nat -A POSTROUTING -o wlp2s0 -j MASQUERADE
 
 # network setup in worker1 and 3, remember to change the IP
 vim /etc/netplan/01-network-manager-all.yaml
