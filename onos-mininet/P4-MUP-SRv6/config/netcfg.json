@@ -14,6 +14,10 @@
         "uGTP4D": "fcbb:bb00:01:4ddd::",
         "uGTP4E": "fcbb:bb00:01:4eee::",
         "isCore": true
+      },
+      "position": {
+        "gridX": 100,
+        "gridY": 500
       }
     },
     "device:r2": {
@@ -28,6 +32,10 @@
         "uDX": "fcbb:bb00:02:fd00::",
         "uDX4": "fcbb:bb00:02:fd44::",
         "isCore": true
+      },
+      "position": {
+        "gridX": 400,
+        "gridY": 300
       }
     },
     "device:r3": {
@@ -40,6 +48,10 @@
         "myStationMac": "00:aa:00:00:00:03",
         "uN": "fcbb:bb00:03::",
         "isCore": true
+      },
+      "position": {
+        "gridX": 700,
+        "gridY": 300
       }
     },
     "device:r4": {
@@ -52,6 +64,10 @@
         "myStationMac": "00:aa:00:00:00:04",
         "uN": "fcbb:bb00:04::",
         "isCore": true
+      },
+      "position": {
+        "gridX": 400,
+        "gridY": 500
       }
     },
     "device:r5": {
@@ -64,6 +80,10 @@
         "myStationMac": "00:aa:00:00:00:05",
         "uN": "fcbb:bb00:05::",
         "isCore": true
+      },
+      "position": {
+        "gridX": 700,
+        "gridY": 500
       }
     },
     "device:r6": {
@@ -76,6 +96,10 @@
         "myStationMac": "00:aa:00:00:00:06",
         "uN": "fcbb:bb00:06::",
         "isCore": true
+      },
+      "position": {
+        "gridX": 400,
+        "gridY": 700
       }
     },
     "device:r7": {
@@ -88,6 +112,10 @@
         "myStationMac": "00:aa:00:00:00:07",
         "uN": "fcbb:bb00:07::",
         "isCore": true
+      },
+      "position": {
+        "gridX": 700,
+        "gridY": 700
       }
     },
     "device:r8": {
@@ -103,6 +131,10 @@
         "uDX4": "fcbb:bb00:08:fd44::",
         "uMUPE": "fcbb:bb00:08:eeee::",
         "isCore": true
+      },
+      "position": {
+        "gridX": 900,
+        "gridY": 400
       }
     },
     "device:r9": {
@@ -117,6 +149,10 @@
         "uDX4": "fcbb:bb00:09:fd44::",
         "uMUPE": "fcbb:bb00:09:eeee::",
         "isCore": true
+      },
+      "position": {
+        "gridX": 900,
+        "gridY": 600
       }
     }
   },
