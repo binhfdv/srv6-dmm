@@ -1,7 +1,7 @@
 # srv6-dmm
 
 
-# Networking Connection Setup
+# Networking Connection Topology
 
 ```
 
@@ -36,15 +36,60 @@
 ## Manager: worker-desktop
 ### natting
 ```
-root@worker-desktop:/home/worker# iptables -A FORWARD -i eno1 -o wlp2s0 -j ACCEPT
-root@worker-desktop:/home/worker# iptables -A FORWARD -i wlp2s0 -o eno1 -m state --state RELATED,ESTABLISHED -j ACCEPT
-root@worker-desktop:/home/worker# iptables -t nat -A POSTROUTING -o wlp2s0 -j MASQUERADE
+iptables -A FORWARD -i eno1 -o wlp2s0 -j ACCEPT
+iptables -A FORWARD -i wlp2s0 -o eno1 -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -t nat -A POSTROUTING -o wlp2s0 -j MASQUERADE
 ```
+### free5gc: 5GC initiation
+```
+cd srv6-dmm/manager_worker/free5gc
+./run.sh
+
+# to stop all running NFs
+./force_kill.sh 
+```
+
+### webconsole for UE register
+```
+cd srv6-dmm/manager_worker/free5gc
+./bin/webconsole
+```
+
+
 
 ## Onos-Mininet: mininet-GB-BSi5-6200
 
 ## Worker 1: worker1
 
 ## Worker 2: worker2
+### gNB, UE initiation
+```
+cd srv6-dmm/worker2/UERANSIM
+./build/nr-gnb -c ./config/free5gc-gnb.yaml
+./build/nr-ue -c ./config/free5gc-ue.yaml
+
+# test UE connection to UPF
+ping 192.168.0.3 -I uesimtun0 -i 0.3
+
+```
+
 
 ## Worker 3: worker3
+### UPF initiation
+```
+route del -net 10.60.0.0/24 gw 192.168.0.20
+cd srv6-dmm/worker3/free5gc
+./bin/upf
+
+# to stop all running NFs
+./force_kill.sh
+```
+
+
+
+
+
+
+
+
+
