@@ -394,7 +394,7 @@ control IngressPipeImpl (inout parsed_headers_t hdr,
     table srv6_transit_udp {
         key = {
             hdr.udp.dst_port : exact;
-            hdr.inner_ipv4.dst_addr: lpm; // test opening 2 PEs to 2 MECs
+            //hdr.inner_ipv4.dst_addr: lpm; // test opening 2 PEs to 2 MECs
 
             hdr.ipv4.src_addr: selector;
             hdr.ipv4.dst_addr: selector;

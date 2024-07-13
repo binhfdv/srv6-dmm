@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1710937710118
+Bnd-LastModified: 1720760917796
 Build-Jdk: 11.0.4
 Built-By: root
 Bundle-Description: Srv6 MicroSID app

@@ -24,7 +24,7 @@ bash util/onos-cmd  route-ipv4-insert device:r1 10.60.0.1 24  00:00:00:00:01:1A
 
 # route from UE to service: gtp decapsulation, worker 3
 # binary cat-dog
-# bash util/onos-cmd route-gtp4d-insert device:r1 10.96.10.30 24 fcbb:bb00:01:: fcbb:bb00:2:3:8:fd44::
+bash util/onos-cmd route-gtp4d-insert device:r1 10.96.10.30 24 fcbb:bb00:01:: fcbb:bb00:2:3:8:fd44::
 # # dog
 # bash util/onos-cmd route-gtp4d-insert device:r1 10.96.10.50 24 fcbb:bb00:01:: fcbb:bb00:4:5:9:8:fd44::
 # # cat
@@ -41,10 +41,10 @@ bash util/onos-cmd  route-ipv4-insert device:r1 10.60.0.1 24  00:00:00:00:01:1A
 
 
 # route to UE: gtp encapsulation
-# bash util/onos-cmd route-gtp4e-insert device:r1 192.168.0.3 10.100.200.3 fcbb:bb00:01:4eee::  1 # TEID: 1
-# bash util/onos-cmd route-gtp4e-insert device:r1 192.168.1.3 10.100.200.3 fcbb:bb00:01:4eee::  1
+bash util/onos-cmd route-gtp4e-insert device:r1 192.168.0.3 10.100.200.3 fcbb:bb00:01:4eee::  1 # TEID: 1
+bash util/onos-cmd route-gtp4e-insert device:r1 192.168.1.3 10.100.200.3 fcbb:bb00:01:4eee::  1
 
 
-bash util/onos-cmd route-gtp4e-insert device:r1 10.96.10.30 10.100.200.3 fcbb:bb00:01:4eee::  1 # TEID: 1
-bash util/onos-cmd route-gtp4e-insert device:r1 10.96.10.40 10.100.200.3 fcbb:bb00:01:4eee::  1
-bash util/onos-cmd route-gtp4e-insert device:r1 10.96.10.50 10.100.200.3 fcbb:bb00:01:4eee::  1 # TEID: 1
+# bash util/onos-cmd route-gtp4e-insert device:r1 10.96.10.30 10.100.200.3 fcbb:bb00:01:4eee::  1 # TEID: 1
+# bash util/onos-cmd route-gtp4e-insert device:r1 10.96.10.40 10.100.200.3 fcbb:bb00:01:4eee::  1
+# bash util/onos-cmd route-gtp4e-insert device:r1 10.96.10.50 10.100.200.3 fcbb:bb00:01:4eee::  1 # TEID: 1
